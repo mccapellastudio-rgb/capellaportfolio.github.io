@@ -1,264 +1,800 @@
-<html>
-    <style>
-html {
-  scroll-behavior: smooth;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Capella Portfolio</title>
+<link rel="icon" href="image/misc/head.png">
+<section id="home"></section>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<nav class="navbar">
+    <ul class="nav-links">
+        <li><a href="#">Capella</a></li>
+        <li><a href="#skill-pack">Script</a></li>
+        <li><a href="#coop">Co<strong>-</strong>op</a></li>
+        <li><a href="#pixel">Pixel</a></li>
+        <li><a href="#model">Model/etc.</a></li>
+    </ul>
+</nav>
+<!-- Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+:root {
+  --radius: 18px;
+  --bg: #0e0e11;
+  --card: #16161c;
+  --text: #ffffff;
+  --muted: #b6b6c2;
+  --accent: #ffffff;
 }
-    </style>
-        <title>Capella Website Design</title>
-        <link rel="icon" type="image/x-icon" href="image/Logol.png">
-        <meta name="viewport" content="width=device-width, initial-scale=0.1">
-        <img style="margin:0!important; pading:0!important" >
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap" rel="stylesheet"> 
-    <body style="align-self: center">
-        <style>
-            html, body {
-                width: -70%;
-                height: -70%;
-                margin: 0;
-                padding: 0;
-            }
-            #container {
-                width: inherit;
-                height: inherit;
-                margin: 0;
-                padding: 0;
-            }
-            h1 {
-                margin: 0;
-                padding: 0;
-            }
-        </style>
-        <section class="header" id="home">
-            <nav class="navbar">
-                <a href="index.html"><img src="image/logo.gif"></a>
-                <div class="nav-links">
-                    <ul>
-                        <li><a href="#home">HOME</a></li>
-                        <li><a href="#model">MODELS</a></li>
-                        <li><a href="#pixelart">PIXELARTS</a></li>
-                        <li><a href="#render">RENDERS</a></li>
-                    </ul>
-                </div> 
-            </nav>
-        <div class="text-box">
-        <style>
-          h1 {
-            font-size: 3.5vw;
-          }
-          p {
-            font-size: 2.0vw;
-          }
-          </style>
-            <h1 style="color:#3a4253;">Howdy Starfarer!</h1>
-            <p style="color:#3a4253;font-size: 30px">Welcome to Capella's Portfolio!<br>
-            A compatible studio from 2 person who love in weapons, mythics, stars and dreams.</p>
-             <a href="visit/history.html" class="hero-btn">Visit here to know more</a>
-            </div>
-        </section> 
-        
-        
-        
-        <!-----course------>
-        <body>
-        <section class="course" id="model">
-        <style>
-          h1 {
-            font-size: 3.3vw;
-          }
-          </style>
-            <h1 class="imagesbd" style="color:#3a4253">MODELS</h1>
-        </section>
-            
-            <div class="images21" style="align-self: center;">
-               <img src="image/list/nevermore_pack.png" data-model="https://sketchfab.com/models/b8d1eba26c5c402f8cc4e26c1294e0c9/embed" class="zoom">
-               <img src="image/list/royal_astral.png" data-model="https://sketchfab.com/models/04bff3abb4544c70baa284cc49c2465d/embed" class="zoom">
-               <img src="image/list/silverpearl_pack.png" data-model="https://sketchfab.com/models/4afd26ac66d44597a00f8a29e1cd23fa/embed" class="zoom">
-            
-            </div> 
-            
-            <div class="images21" style="align-self: center;">
-               <img src="image/list/kadachidaito.png" data-model="https://sketchfab.com/models/28632591813b4065a1bc4fc5d20ddb6c/embed" class="zoom">
-               <img src="image/list/from_the_abyss.png" data-model="https://sketchfab.com/models/62603f99ed6642ba8cd37e1b64c6389b/embed" class="zoom">
-               <img src="image/list/phi_ta_khon.png" data-model="https://sketchfab.com/models/51b7af9e8ea3402ea2ffca89e17ef105/embed" class="zoom">
+/* Navbar */
+.navbar{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#0e0e11;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 50px;
+    box-sizing:border-box;
+    z-index:1000;
+    font-size: 20px;
+}
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:25px;
+    margin:0;
+}
 
-            </div>
-            
-            
-            <div class="images21" style="align-self: center;">
-              <img src="image/list/3d_sword.png" data-model="https://sketchfab.com/models/53ba627bc7eb456298a092c130e4dbf2/embed" class="zoom">
-              <img src="image/list/master_element.png" data-model="https://sketchfab.com/models/1280bea20a854e08a88f31d922fa03ef/embed" class="zoom">
-              <img src="image/list/starter_pack.png" data-model="https://sketchfab.com/models/e6e33b7a9c724f2dbe262a658740b815/embed" class="zoom">
-            </div> 
+.nav-links a{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 4px;
+}
 
-            <div class="images21" style="">
-               <img src="image/list/waves_gales.png" data-model="image/list/waves_gales.png" class="zoom">
-               <img src="image/list/wav_book.gif" data-model="image/list/wav_book.gif" class="zoom">
-               <img src="image/list/waves_idle_bg.gif" data-model="image/list/waves_idle_bg.gif" class="zoom">
-               <img src="image/list/waves_walk_bg.gif" data-model="image/list/waves_walk_bg.gif" class="zoom">
-            </div>  
-            
-            <div class="images21">
-              <img src="image/list/night_sky_sword.png" data-model="https://sketchfab.com/models/ae2ee0b829764d6785a49c58e50311b2/embed" class="zoom">
-              <img src="image/list/blue_rose_sword.png" data-model="https://sketchfab.com/models/f89d357974594bf38465f09acb5523f3/embed" class="zoom">
-              <img src="image/list/skull_blade.gif" data-model="image/list/skull_blade.gif" class="zoom">
-              <img src="image/list/blank_sword.png" data-model="image/list/blank_sword.png" class="zoom">
-              <img src="image/list/spider_sword.png" data-model="https://sketchfab.com/models/b191fe9aa0ab499a96b6e74eeb88c50c/embed" class="zoom">
-            </div>
-            
-            
-            <div class="images21">
-              <img src="image/list/summer_kit.png" data-model="image/list/summer_kit.png" class="zoom">
-              <img src="image/list/taffy_glove.gif" data-model="image/list/taffy_glove.gif" class="zoom">
-              <img src="image/list/taffy_kiss_crossbow.gif" data-model="image/list/taffy_kiss_crossbow.gif" class="zoom">
-                
-            </div>
-            
-            
-        <section class="course" id="pixelart">
-        <style>
-          h1 {
-            font-size: 3.3vw;
-          }
-          </style>
-            <h1 class="imagesbd" style="color:#3a4253">PIXELARTS</h1>
-        </section> 
-            
-            <div class="images21">
-               <img src="image/list/1.png" data-model="image/list/1.png" class="zoom">
-               <img src="image/list/4.png" data-model="image/list/4.png" class="zoom">
-               <img src="image/list/bow_pulling.png" data-model="image/list/bow_pulling.png" class="zoom">    
-            </div>
-            
-            <div class="images21">
-               <img src="image/list/titlegif.gif" data-model="image/list/titlegif.gif" class="zoom">
-               <img src="image/list/runegif2.gif" data-model="image/list/runegif2.gif" class="zoom">
-               <img src="image/list/eye.gif" data-model="image/list/eye.gif" class="zoom">    
-            </div>    
-            
-            <div class="images21">
-               <img src="image/list/archer_icon.png" data-model="image/list/archer_icon.png" class="zoom">
-               <img src="image/list/berserker_icon.png" data-model="image/list/berserker_icon.png" class="zoom">
-               <img src="image/list/mage_icon.png" data-model="image/list/mage_icon.png" class="zoom">     
-            </div>
-            <div class="images21">
-               <img src="image/list/swordsman_icon.png" data-model="image/list/swordsman_icon.png" class="zoom">
-               <img src="image/list/tank_icon.png" data-model="image/list/tank_icon.png" class="zoom">
-            </div>
-            <div class="images21">
-               <img src="image/list/rankicon1.png" data-model="image/list/rankicon1.png" class="zoom">
-               <img src="image/list/rankicon2.png" data-model="image/list/rankicon2.png" class="zoom">
-               <img src="image/list/rankicon3.png" data-model="image/list/rankicon3.png" class="zoom">
-            </div>    
-        <section class="course" id="render">
-        <style>
-          h1 {
-            font-size: 3.3vw;
-          }
-          </style>
-            <h1 class="imagesbd" style="color:#3a4253">RENDERS</h1>
-        </section>
-          
+/* underline */
+.nav-links a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #78efff;
 
-            <div class="images21">
-               <img src="image/list/3d_sword_render.png" data-model="image/list/3d_sword_render.png" class="zoom">
-               <img src="image/list/23.png" data-model="image/list/23" class="zoom">
-               <img src="image/list/royal_astral_render.png" data-model="image/list/royal_astral_render.png" class="zoom">
-            </div>      
-        
-            <div class="images21">
-               <img src="image/list/runestone_render.png" data-model="image/list/runestone_render.png" class="zoom">
-               <img src="image/list/par_vol2.png" data-model="image/list/par_vol2.png" class="zoom">
-               <img src="image/list/par_vol1.png" data-model="image/list/par_vol1.png" class="zoom">
-                
-            </div>      
-        
-            
-        </body>
-       
-        <!------Scoreboard------>
-        
-        <!-----media------>
-        
-        <h1 style="color:#3a4253" class="course2">Social Media</h1>
-         <div class="wrapper">
-           <div class="button">
-             <a href="https://x.com/CapellaStudio" target="_blank">
-            <div class="icon">
-             <i class="fab" aria-hidden="true">X</i>
-            </div>
-            <span>X Twitter</span>
-            </a>
-         </div>
-         <div class="button">
-             <a href="" target="_blank">
-            <div class="icon">
-               <i class="fab fa-discord"></i>
-            </div>
-            <span>soon</span>
-            </a>
-         </div>
-           <div class="button">
-             <a href="" target="_blank">
-            <div class="icon">
-               <i class="fab fa-youtube"></i>
-            </div>
-            <span>soon</span>
-            </a>
-        </div>
-           <div class="button">
-             <a href="https://builtbybit.com/creators/chiakiharuma.303877/" target="_blank">
-            <div class="icon">
-               <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-            </div>
-            <span>BuiltByBit</span>
-            </a>
-         </div>
-                       <div id="modelModal" class="modal" style="align-self: center">
-              <span class="close">&times;</span>
-              <div class="modal-content" style="align-self: center">
-                <iframe title="" id="sketchfabFrame" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-            </div>
-           
-           
+    transform: scaleX(0);
+    transform-origin: center; /* start from middle */
+    transition: transform 0.35s ease;
+}
+
+/* animate outward */
+.nav-links a:hover::after{
+    transform: scaleX(1);
+}
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+section{
+    scroll-margin-top: 140px; /* slightly bigger than navbar height */
+}
+
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===== BANNER ===== */
+.banner {
+  margin: auto;
+  position: relative;
+  aspect-ratio: 2 / 1;
+  margin-top: -400px;
+  /* border: 200px solid var(--bg);
+  border-radius: 220px; */
+  background: url("image/misc/banner2_1.png") center / cover no-repeat;
+}
+
+/* Logo */
+.banner-logo {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  aspect-ratio: 1 / 1;
+  background: url("image/misc/logo.png") center / cover no-repeat;
+  border-radius: 50%;
+  border: 6px solid var(--bg);
+}
+
+/* ===== CONTENT ===== */
+.container {
+  max-width: 1200px;
+  margin: 50px auto 80px;
+  padding: 0 20px;
+}
+.container2 {
+  justify-self: center;
+  max-width: 1200px;
+  margin: 80px auto 80px;
+  padding: 0 20px;
+}
+/* Category */
+.category {
+  margin-bottom: 60px;
+}
+
+.category h2 {
+  margin-bottom: 16px;
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+/* Ratios */
+.ratio-2x1 {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.ratio-1x1 {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.ratio-16x9 {
+  margin-top: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.ratio-16x92 {
+  margin-top: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+
+
+/* Image Cards */
+.card {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.06);
+}
+
+
+
+
+/* Image Cards2 */
+.card2 {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--card);
+  position: relative;
+}
+
+.card2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+.card2:hover img {
+  opacity: 70%;
+  transform: scale(1.06);
+}
+
+
+
+
+
+
+/* Play button circle */
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+/* Triangle */
+.play-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 22px solid white;
+}
+
+/* Show on hover */
+.card2:hover .play-btn {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: var(--radius);
+}
+
+.modal button {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ===== FOOTER ICONS ===== */
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.footer a {
+  color: var(--muted);
+  font-size: 1.8rem;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.footer a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.p-line {
+  position: relative;
+  padding-left: 16px;
+  margin: 20px;
+}
+
+.p-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #ffffff;
+}
+
+
+
+.p-line2 {
+  position: relative;
+  padding-left: 16px;
+  margin: 20px;
+}
+
+.p-line2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -25px;
+  width: 2px;
+  height: 130%;
+  background: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- Banner -->
+<div class="banner">
+  <div class="banner-logo">
+  </div>
+</div>
+<div class="container2">
+    <h2 style="font-size: 60px">CAPELLA
+      <p class="container2" style="font-size: 20px;margin-top: -5px;justify-content: center;"  ><sup>✧</sup>✧ Script & Artist</p>
+    </h2>
+</div>
+
+  <!-- Footer Icons -->
+  <div class="footer">
+    <a href="https://x.com/CapellaStudio" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+    <!-- <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a> -->
+    <a href="https://builtbybit.com/creators/capellastudio.303877/" target="_blank" rel="noopener"><i class="fa-solid fa-cube"></i></a>
+    <a href="https://discord.gg/XyXth4BrvW" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i></a>
+  </div>
+
+
+
+<div class="container">
+
+ <!-- style="direction: rtl" -->
+  
+  <!-- 16:9 Category -->
+  <div class="category">
+
+
+
+
+
+
+    <h2 style="font-size: 30px">SKILL PACK</h2><section id="skill-pack"></section>
+    <div class="grid ratio-16x9" style="margin-top: 40px;">
+      <div class="card2"><img src="image/sc/mm13.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtube.com/playlist?list=PLonMdu1LdApOBAy9zC_MX3l-guKI4mV9k&si=chNmkpvk8qVYl15f" target="_blank" rel="noopener"></a></div>
+      <div class="card2"><img src="image/sc/mm14.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtube.com/playlist?list=PLonMdu1LdApOBAy9zC_MX3l-guKI4mV9k&si=chNmkpvk8qVYl15f" target="_blank" rel="noopener"></a></div>
+      <div class="card2"><img src="image/sc/mm12.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtube.com/playlist?list=PLonMdu1LdApOBAy9zC_MX3l-guKI4mV9k&si=chNmkpvk8qVYl15f" target="_blank" rel="noopener"></a></div>
+
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Custom Weapon Edition</strong> - MythicMobs + Crucible
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;Fully custom weapon combination with sfx/vfx/3d/skill</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2026/01/30</p>
       </div>
-        
-        
-        <!-----footers------>
-        
-        <section class="footers">
-            
-        </section>
+    </div>
+
+    <div class="grid ratio-16x9" style="margin-top: 40px;">
+      <div class="card2"><img src="image/sc/mm5.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtu.be/APMnuhJKcRo?si=ggAdkK0NRXwV8FxO" target="_blank" rel="noopener"></a></div>
+      <div class="card2"><img src="image/sc/mm6.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtu.be/APMnuhJKcRo?si=ggAdkK0NRXwV8FxO" target="_blank" rel="noopener"></a></div>
+      <div class="card2"><img src="image/sc/mm7.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtu.be/APMnuhJKcRo?si=ggAdkK0NRXwV8FxO" target="_blank" rel="noopener"></a></div>
+
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>30 Particle Skill Set</strong> - MythicMobs
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;Simple weapon tier upgrade for MMOItems config</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2023/10/01</p>
+      </div>
+    </div>
+
+    <h2 style="font-size: 30px">COOPERATION WORK</h2><section id="coop"></section>
+
+    <div class="grid ratio-16x9" style="margin-top: 40px;">
+      <div class="card2"><img src="image/sc/mm22.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=Ert8YIcpRNw" target="_blank" rel="noopener"></a></div>
+      <div class="card2"><img src="image/sc/mm21.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=Ert8YIcpRNw" target="_blank" rel="noopener"></a></div>
+      <div class="card2"><img src="image/sc/mm20.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=Ert8YIcpRNw" target="_blank" rel="noopener"></a></div>
+
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Yeti Bundle (@DeaprtmentQDE)</strong> - MythicMobs + Crucible
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;DepartmentQDE assigned me as Script, I've made 2 parts of them</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;AI - Boss/Mob's Skill (sound effect include)</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;Items - summon/projectile/boss-phase</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2026/01/21</p>
+      </div>
+    </div>
+
+
+    <div class="grid ratio-16x9" style="margin-top: 40px;">
+      <div class="card2"><img src="image/sc/mm19.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=NsXZ5r0zPjs" target="_blank" rel="noopener"></a></div>
+      <div class="card2"><img src="image/sc/mm18.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=NsXZ5r0zPjs" target="_blank" rel="noopener"></a></div>
+      <div class="card2"><img src="image/sc/mm17.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=NsXZ5r0zPjs" target="_blank" rel="noopener"></a></div>
+
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Deer Claus (@DeaprtmentQDE)</strong> - MythicMobs + Crucible
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;DepartmentQDE assigned me as Script, I've made 2 parts of them</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;AI - Boss/Mob's Skill (sound effect include)</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;Items - Custom consumable</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2025/12/23</p>
+      </div>
+    </div>
+
+
+
+    <div class="grid ratio-16x9" style="margin-top: 40px;">
+      <div class="card2"><img src="image/sc/mm24.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=VE1ZWXSRyac" target="_blank" rel="noopener"></a></div>
+      <div class="card2"><img src="image/sc/mm25.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=VE1ZWXSRyac" target="_blank" rel="noopener"></a></div>
+      <div class="card2"><img src="image/sc/mm26.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=VE1ZWXSRyac" target="_blank" rel="noopener"></a></div>
+
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Phantom Boss (@Playbox)</strong> - MythicMobs
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;Playbox assigned me as script.</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;over +10 skills + animation import (+1700 lines)</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2023/10/21 (terms of contract: this work cannot publish to public)</p>
+      </div>
+    </div>
+
+
+
+
+
+    <h2 style="font-size: 30px">MYTHIC SCRIPT COMBINATION</h2><section id="script-combination"></section>
+    <div class="grid ratio-16x9" style="margin-top: 40px;">
+      <div class="card2"><img src="image/sc/mm11.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=z9v8VaBUp7A" target="_blank" rel="noopener"></a></div>
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Armor Upgrade Station</strong> - MythicMobs + GOOP
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;Same as upgrade station but only</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;work with any armor</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2024/10/07</p>
+      </div>
+    </div>
+
+
+    <div class="grid ratio-16x9">
+      <div class="card2"><img src="image/sc/mm10.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=imK9r8d96wE" target="_blank" rel="noopener"></a></div>
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Offering Station</strong> - MythicMobs + GOOP
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;Advanced mechanic that can calculate item's worth.</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2024/07/23</p>
+      </div>
+    </div>
+
+
+
+
+    <div class="grid ratio-16x9" style="margin-top: 20px;">
+      <div class="card2"><img src="image/sc/mm4.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=QpTOhjimZ3Y" target="_blank" rel="noopener"></a></div>
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Tier Overloader</strong> - MythicMobs + GOOP
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;Simple weapon tier upgrade for MMOItems</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;Configurable to upgrade tier/set item's restric.</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2023/07/03</p>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="grid ratio-16x9">
+      <div class="card2"><img src="image/sc/mm1.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=KrCNZzd6Su8" target="_blank" rel="noopener"></a></div>
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Alter Exchanger</strong> - MythicMobs + GOOP
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;Simple salvage item system for MMOItems</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;Configurable to set custom amount/stat/</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;item inside [MMOItems].</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2024/07/15</p>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="grid ratio-16x9">
+      <div class="card2"><img src="image/sc/mm2.png" style="width:100%;aspect-ratio:16/9;object-fit:cover"><a class="play-btn" href="https://www.youtube.com/watch?v=xw_Lhd0g37g" target="_blank" rel="noopener"></a></div>
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Upgrade Station</strong> - MythicMobs + GOOP
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;Simple tools upgrader for MMOItems</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;Feels free to set max/min/chance(int/%)/</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;amount/tier/level.</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2023/05/08</p>
+      </div>
+    </div>
+
+
+    <div class="grid ratio-16x9">
+      <div class="card2"><img src="image/sc/mm3.png" style="width:100%;aspect-ratio:16/9;object-fit:cover"><a class="play-btn" href="https://www.youtube.com/watch?v=6wNimrU8UfA" target="_blank" rel="noopener"></a></div>
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Reforge Station</strong> - MythicMobs + GOOP
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;Simple tools reforger for MMOItems</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;This system inspired from Terraria's Goblin Tinkerer.</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;Complex to config or add reforge/stat/name/tier color</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2022/09/05</p>
+      </div>
+    </div>
+
+
+    <div class="grid ratio-16x9">
+      <div class="card2"><img src="image/sc/mm23.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=rxCW91qBh_g" target="_blank" rel="noopener"></a></div>
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Custom Harvest</strong> - MythicMobs + Pandeloot[abandon]
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;Can customize harvest's power/fortune/efficient.</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2024/07/15</p>
+      </div>
+    </div>
+
+
+
+    <div class="grid ratio-16x9">
+      <div class="card2"><img src="image/sc/mm9.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://www.youtube.com/watch?v=J7Cks-GKVz4" target="_blank" rel="noopener"></a></div>
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Minion with Owner's Damage</strong> - MythicMobs
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;Summon mechanic with owner, has a bit complex MM script,</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;Each mob are summoned will have their own damage,</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;but my script made them to had owner's damage in usual</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2023/07/03</p>
+      </div>
+    </div>
+
+    <div class="grid ratio-16x9">
+      <div class="card2"><img src="image/sc/mm15.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://builtbybit.com/resources/free-particle-slash-vol-1.56792/" target="_blank" rel="noopener"></a></div>
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Particle Plot (Slash)</strong> - MythicMobs + Python
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;Python generate particle plot from calculation formula</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2024/12/03</p>
+      </div>
+    </div>
+
+    <div class="grid ratio-16x9">
+      <div class="card2"><img src="image/sc/mm16.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://builtbybit.com/resources/free-particle-slash-vol2.76390/" target="_blank" rel="noopener"></a></div>
+      <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Simple Slash Model</strong> - MythicMobs + ModelEngine
+      <p style="margin-top: 5px;width:1080px;"
+      >&nbsp;&nbsp;Testing modelengine first time</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;</p>
+      <p style="margin-top: -20px;width:1080px;"
+      >&nbsp;&nbsp;2025/9/06</p>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  
+  <!-- 2:1 Category -->
+    <div class="category">
+    <h2 style="font-size: 30px" >PIXEL ART</h2><section id="pixel"></section>
+    <div class="grid ratio-2x1">
+
+
+
+
+
+      <div class="card"><img src="image/2d/pix10.png" onclick="openModal(this)" onmouseover="this.src='image/2d/pix10_1.gif'" onmouseout="this.src='image/2d/pix10.png'" onclick="document.body.insertAdjacentHTML('beforeend','<div onclick=this.remove() style=position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center><img src=image/2d/pix10_1.gif style=max-width:50%;max-height:50%;border-radius:20px></div>')"></div>
+      <div class="card"><img src="image/2d/pix4.png" onclick="openModal(this)" onmouseover="this.src='image/2d/pix4_1.gif'" onmouseout="this.src='image/2d/pix4.png'" onclick="document.body.insertAdjacentHTML('beforeend','<div onclick=this.remove() style=position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center><img src=image/2d/pix4_1.gif style=max-width:50%;max-height:50%;border-radius:20px></div>')"></div>
+      <div class="card"><img src="image/2d/pix3.png" onclick="openModal(this)" onmouseover="this.src='image/2d/pix3_1.gif'" onmouseout="this.src='image/2d/pix3.png'" onclick="document.body.insertAdjacentHTML('beforeend','<div onclick=this.remove() style=position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center><img src=image/2d/pix3_1.gif style=max-width:50%;max-height:50%;border-radius:20px></div>')"></div>
+
+      <div class="card"><img src="image/2d/pix13.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/2d/pix12.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/2d/pix11.png" onclick="openModal(this)"></div>
+
+
+      <div class="card"><img src="image/2d/pix9.png" onclick="openModal(this)" onmouseover="this.src='image/2d/pix9_1.gif'" onmouseout="this.src='image/2d/pix9.png'" onclick="document.body.insertAdjacentHTML('beforeend','<div onclick=this.remove() style=position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center><img src=image/2d/pix9_1.gif style=max-width:50%;max-height:50%;border-radius:20px></div>')"></div>
+      <div class="card"><img src="image/2d/pix6.png" onclick="openModal(this)" onmouseover="this.src='image/2d/pix6_1.gif'" onmouseout="this.src='image/2d/pix6.png'" onclick="document.body.insertAdjacentHTML('beforeend','<div onclick=this.remove() style=position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center><img src=image/2d/pix6_1.gif style=max-width:50%;max-height:50%;border-radius:20px></div>')"></div>
+      <div class="card"><img src="image/2d/pix7.png" onclick="openModal(this)" onmouseover="this.src='image/2d/pix7_1.gif'" onmouseout="this.src='image/2d/pix7.png'" onclick="document.body.insertAdjacentHTML('beforeend','<div onclick=this.remove() style=position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center><img src=image/2d/pix7_1.gif style=max-width:50%;max-height:50%;border-radius:20px></div>')"></div>
+
+      <div class="card"><img src="image/2d/pix1.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/2d/pix2.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/2d/pix8.png" onclick="openModal(this)" onmouseover="this.src='image/2d/pix8_1.gif'" onmouseout="this.src='image/2d/pix8.png'" onclick="document.body.insertAdjacentHTML('beforeend','<div onclick=this.remove() style=position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center><img src=image/2d/pix8_1.gif style=max-width:50%;max-height:50%;border-radius:20px></div>')"></div>
+      <div class="card"><img src="image/2d/pix5.png" onclick="openModal(this)" onmouseover="this.src='image/2d/pix5_1.gif'" onmouseout="this.src='image/2d/pix5.png'" onclick="document.body.insertAdjacentHTML('beforeend','<div onclick=this.remove() style=position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center><img src=image/2d/pix5_1.gif style=max-width:50%;max-height:50%;border-radius:20px></div>')"></div>
+
+    </div>
+  <!-- 1:1 Category -->
+  <div class="category">
+    <h2 style="font-size: 30px;margin-top: 40px" >MODELS</h2><section id="model"></section>
+    <div class="grid ratio-1x1">
+      <div class="card"><img src="image/3d/pack11.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/3d/pack10.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/3d/pack9.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/3d/pack8.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/3d/pack7.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/3d/pack6.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/3d/pack5.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/3d/pack4.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/3d/pack3.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/3d/pack2.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/3d/pack1.png" onclick="openModal(this)"></div>
+    </div>
+
+  </div>
+
+    <div class="category">
+    <h2 style="font-size: 30px" >BUILDS</h2>
+    <div class="grid ratio-2x1">
+
+      <div class="card"><img src="image/build/b2.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/build/b4.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/build/b3.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/build/b5.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/build/b1.png" onclick="openModal(this)"></div>
+
+
+    </div>
+
+  </div>
+
+    <div class="category">
+    <h2 style="font-size: 30px" >RENDERS</h2>
+    <div class="grid ratio-2x1">
+
+      <div class="card"><img src="image/render/r10.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/render/r9.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/render/r8.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/render/r7.png" onclick="openModal(this)"></div>
+
+      <div class="card"><img src="image/render/r6.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/render/r5.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/render/r4.png" onclick="openModal(this)"></div>
+
+
+      <div class="card"><img src="image/render/r3.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/render/r2.png" onclick="openModal(this)"></div>
+      <div class="card"><img src="image/render/r1.png" onclick="openModal(this)"></div>
+
+
+    </div>
+
+
+
+
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <button onclick="closeModal()">&times;</button>
+  <img id="modalImg">
+</div>
+
 <script>
-const modal = document.getElementById("modelModal");
-const iframe = document.getElementById("sketchfabFrame");
-const closeBtn = document.querySelector(".close");
+function openModal(img) {
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modalImg").src = img.src;
+}
 
-document.querySelectorAll(".images21 img").forEach(img => {
-  img.addEventListener("click", () => {
-    const modelURL = img.getAttribute("data-model");
-    iframe.src = modelURL;
-    modal.style.display = "block";
-  });
-});
-
-closeBtn.onclick = () => {
-  modal.style.display = "none";
-  iframe.src = ""; // stop model playback
-};
-
-window.onclick = (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-    iframe.src = "";
-  }
-};
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
 </script>
-             
-           
-    </body>
-</html>
 
+</body>
+</html>
