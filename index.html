@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Capella Portfolio</title>
 <link rel="icon" href="image/misc/head.png">
-<section id="home"></section>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <nav class="navbar">
     <ul class="nav-links">
@@ -14,6 +14,17 @@
         <li><a href="#pixel">Pixel</a></li>
         <li><a href="#model">Model/etc.</a></li>
     </ul>
+      <!-- Footer Icons -->
+
+
+  </div>
+
+  <div class="footer" style="margin-top: -5px;">
+    <a href="https://x.com/CapellaStudio" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#" data-copy="mccapellastudio@gmail.com" onclick="event.preventDefault(); copy(this)"><i class="fa-regular fa-envelope"></i></a>
+    <a href="https://builtbybit.com/creators/capellastudio.303877/" target="_blank" rel="noopener"><i class="fa-solid fa-cube"></i></a>
+    <a href="https://discord.gg/XyXth4BrvW" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i></a>
+  </div>
 </nav>
 <!-- Icons -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -32,6 +43,7 @@
     position: fixed;
     top:0;
     left:0;
+    height:10%;
     width:100%;
     background:#0e0e11;
     color:white;
@@ -44,6 +56,7 @@
     font-size: 20px;
 }
 .nav-links{
+    
     list-style:none;
     display:flex;
     gap:25px;
@@ -89,9 +102,8 @@ html{
     scroll-behavior: smooth;
 }
 section{
-    scroll-margin-top: 140px; /* slightly bigger than navbar height */
+    scroll-margin-top: 150px; /* slightly bigger than navbar height */
 }
-
 
 body {
   margin: 0;
@@ -105,7 +117,7 @@ body {
   margin: auto;
   position: relative;
   aspect-ratio: 2 / 1;
-  margin-top: -400px;
+  margin-top: -420px;
   /* border: 200px solid var(--bg);
   border-radius: 220px; */
   background: url("image/misc/banner2_1.png") center / cover no-repeat;
@@ -114,7 +126,7 @@ body {
 /* Logo */
 .banner-logo {
   position: absolute;
-  bottom: -80px;
+  bottom: -60px;
   left: 50%;
   transform: translateX(-50%);
   width: 160px;
@@ -138,7 +150,7 @@ body {
 }
 /* Category */
 .category {
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 
 .category h2 {
@@ -341,12 +353,69 @@ body {
 }
 
 
+.fade-line {
+  margin-top:100px;
+  margin-bottom:100px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #ffffff,
+    transparent
+  );
+}
 
 
+.fade-line-short {
+  margin-top:100px;
+  margin-bottom:100px;
+  height: 2px;
+  width: 360px;        /* controls how short it is */
+  margin: 20px auto;   /* centers it */
+  background: linear-gradient(to right, transparent, #ffffff, transparent);
+}
+
+#toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: rgba(20, 20, 20, 0.9);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 
 
+#copy-toast{
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #111;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  opacity: 0;
+  transition: 0.25s ease;
+  pointer-events: none;
+}
 
-
+#copy-toast.show{
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 
 
 </style>
@@ -360,17 +429,19 @@ body {
   </div>
 </div>
 <div class="container2">
-    <h2 style="font-size: 60px">CAPELLA
-      <p class="container2" style="font-size: 20px;margin-top: -5px;justify-content: center;"  ><sup>✧</sup>✧ Script & Artist</p>
-    </h2>
+    <h2 style="font-size: 60px;justify-content: center">CAPELLA
+      <p class="container2" style="font-size: 20px;margin-top: -5px;justify-content: center"><sup>✧</sup>✧ Script & Artist</p>
+    </h2 style="justify-content: center;">
 </div>
 
-  <!-- Footer Icons -->
-  <div class="footer">
-    <a href="https://x.com/CapellaStudio" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
-    <!-- <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a> -->
-    <a href="https://builtbybit.com/creators/capellastudio.303877/" target="_blank" rel="noopener"><i class="fa-solid fa-cube"></i></a>
-    <a href="https://discord.gg/XyXth4BrvW" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i></a>
+<div class="container2">
+    <h2 style="justify-content: center;">
+      <p class="container2" style="font-size: 30px;margin-top: -10px;font-weight: lighter;">overview</p>
+      <p class="container2" style="font-size: 16px;margin-top: -70px;font-weight: lighter;">The production of script development asset, 2D pixel art , and 3D modeling.</p>
+      <p class="container2" style="font-size: 16px;margin-top: -70px;font-weight: lighter;">Providing commission services and offer a selection of ready-made assets for sale.</p>
+      <p> </p>
+      <p style="margin-bottom: 120px;"> </p>
+    </h2>
   </div>
 
 
@@ -385,9 +456,9 @@ body {
 
 
 
+<div class="fade-line"></div>
 
-
-    <h2 style="font-size: 30px">SKILL PACK</h2><section id="skill-pack"></section>
+    <h2 style="font-size: 30px">SKILL PACK</h2><section id="skill-pack"></section><section id="home"></section>
     <div class="grid ratio-16x9" style="margin-top: 40px;">
       <div class="card2"><img src="image/sc/mm13.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtube.com/playlist?list=PLonMdu1LdApOBAy9zC_MX3l-guKI4mV9k&si=chNmkpvk8qVYl15f" target="_blank" rel="noopener"></a></div>
       <div class="card2"><img src="image/sc/mm14.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtube.com/playlist?list=PLonMdu1LdApOBAy9zC_MX3l-guKI4mV9k&si=chNmkpvk8qVYl15f" target="_blank" rel="noopener"></a></div>
@@ -406,9 +477,9 @@ body {
     </div>
 
     <div class="grid ratio-16x9" style="margin-top: 40px;">
-      <div class="card2"><img src="image/sc/mm5.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtu.be/APMnuhJKcRo?si=ggAdkK0NRXwV8FxO" target="_blank" rel="noopener"></a></div>
-      <div class="card2"><img src="image/sc/mm6.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtu.be/APMnuhJKcRo?si=ggAdkK0NRXwV8FxO" target="_blank" rel="noopener"></a></div>
-      <div class="card2"><img src="image/sc/mm7.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtu.be/APMnuhJKcRo?si=ggAdkK0NRXwV8FxO" target="_blank" rel="noopener"></a></div>
+      <div class="card2"><img src="image/sc/mm5.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtube.com/playlist?list=PLonMdu1LdApOo4mIwLsDDgafElk5vlcA7&si=gG5qZYIjD9LFvUNt" target="_blank" rel="noopener"></a></div>
+      <div class="card2"><img src="image/sc/mm6.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtube.com/playlist?list=PLonMdu1LdApOo4mIwLsDDgafElk5vlcA7&si=gG5qZYIjD9LFvUNt" target="_blank" rel="noopener"></a></div>
+      <div class="card2"><img src="image/sc/mm7.png" style="width:100%;aspect-ratio:16/9;object-fit:cover;"><a class="play-btn" href="https://youtube.com/playlist?list=PLonMdu1LdApOo4mIwLsDDgafElk5vlcA7&si=gG5qZYIjD9LFvUNt" target="_blank" rel="noopener"></a></div>
 
       <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>30 Particle Skill Set</strong> - MythicMobs
       <p style="margin-top: 5px;width:1080px;"
@@ -421,7 +492,7 @@ body {
       >&nbsp;&nbsp;2023/10/01</p>
       </div>
     </div>
-
+<div class="fade-line-short"></div>
     <h2 style="font-size: 30px">COOPERATION WORK</h2><section id="coop"></section>
 
     <div class="grid ratio-16x9" style="margin-top: 40px;">
@@ -431,11 +502,11 @@ body {
 
       <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Yeti Bundle (@DeaprtmentQDE)</strong> - MythicMobs + Crucible
       <p style="margin-top: 5px;width:1080px;"
-      >&nbsp;&nbsp;DepartmentQDE assigned me as Script, I've made 2 parts of them</p>
+      >&nbsp;&nbsp;DepartmentQDE assigned me as dev.</p>
       <p style="margin-top: -20px;width:1080px;"
-      >&nbsp;&nbsp;AI - Boss/Mob's Skill (sound effect include)</p>
+      >&nbsp;&nbsp;- 25 skills (include boss,minion,sounds,summon mechanic)</p>
       <p style="margin-top: -20px;width:1080px;"
-      >&nbsp;&nbsp;Items - summon/projectile/boss-phase</p>
+      >&nbsp;&nbsp;- 3 items</p>
       <p style="margin-top: -20px;width:1080px;"
       >&nbsp;&nbsp;</p>
       <p style="margin-top: -20px;width:1080px;"
@@ -451,11 +522,11 @@ body {
 
       <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Deer Claus (@DeaprtmentQDE)</strong> - MythicMobs + Crucible
       <p style="margin-top: 5px;width:1080px;"
-      >&nbsp;&nbsp;DepartmentQDE assigned me as Script, I've made 2 parts of them</p>
+      >&nbsp;&nbsp;DepartmentQDE assigned me as dev.</p>
       <p style="margin-top: -20px;width:1080px;"
-      >&nbsp;&nbsp;AI - Boss/Mob's Skill (sound effect include)</p>
+      >&nbsp;&nbsp;- 25 skills (include boss,minion,sounds)</p>
       <p style="margin-top: -20px;width:1080px;"
-      >&nbsp;&nbsp;Items - Custom consumable</p>
+      >&nbsp;&nbsp;- 8 custom consumables</p>
       <p style="margin-top: -20px;width:1080px;"
       >&nbsp;&nbsp;</p>
       <p style="margin-top: -20px;width:1080px;"
@@ -472,9 +543,9 @@ body {
 
       <div class="p-line"style="font-size: 20px;width:1080px;margin-left: 0px;"><strong>Phantom Boss (@Playbox)</strong> - MythicMobs
       <p style="margin-top: 5px;width:1080px;"
-      >&nbsp;&nbsp;Playbox assigned me as script.</p>
+      >&nbsp;&nbsp;Playbox assigned me as dev.</p>
       <p style="margin-top: -20px;width:1080px;"
-      >&nbsp;&nbsp;over +10 skills + animation import (+1700 lines)</p>
+      >&nbsp;&nbsp;- 11 skills (only boss)</p>
       <p style="margin-top: -20px;width:1080px;"
       >&nbsp;&nbsp;</p>
       <p style="margin-top: -20px;width:1080px;"
@@ -485,7 +556,7 @@ body {
     </div>
 
 
-
+<div class="fade-line-short"></div>
 
 
     <h2 style="font-size: 30px">MYTHIC SCRIPT COMBINATION</h2><section id="script-combination"></section>
@@ -689,7 +760,7 @@ body {
   </div>
 
 
-
+<div class="fade-line"></div>
   
   <!-- 2:1 Category -->
     <div class="category">
@@ -774,10 +845,14 @@ body {
 
     </div>
 
-
+<div class="fade-line"></div>
 
 
 </div>
+
+
+
+
 
 <!-- Modal -->
 <div class="modal" id="modal">
@@ -785,16 +860,67 @@ body {
   <img id="modalImg">
 </div>
 
+
+<style>
+.hide {
+  display: none !important;
+}
+</style>
+
 <script>
 function openModal(img) {
   document.getElementById("modal").style.display = "flex";
   document.getElementById("modalImg").src = img.src;
+
+  document.querySelector(".navbar").classList.add("hide");
 }
 
 function closeModal() {
   document.getElementById("modal").style.display = "none";
+
+  document.querySelector(".navbar").classList.remove("hide");
 }
 </script>
 
+
+<script>
+function cxOpenModal() {
+  document.getElementById("cxModal").style.display = "flex";
+}
+
+function cxCloseModal() {
+  document.getElementById("cxModal").style.display = "none";
+}
+</script>
+<script>
+  function copy(el) {
+    const text = el.dataset.copy;
+    const toast = document.getElementById("toast");
+
+    navigator.clipboard.writeText(text).then(() => {
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2000);
+    });
+  }
+</script>
+
+
+<script>
+function copy(el){
+  navigator.clipboard.writeText(el.dataset.copy);
+
+  const toast = document.getElementById("copy-toast");
+  toast.classList.add("show");
+
+  setTimeout(()=>{
+    toast.classList.remove("show");
+  },1800);
+}
+</script>
+
+<div id="copy-toast" style="margin-top: 100px;">Email copied!</div>
 </body>
 </html>
