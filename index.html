@@ -280,10 +280,10 @@ img.zoom { scale: 120%; }
 
 /* ---------- Video support ---------- */
 .viewer__main [hidden] { display: none; }
-.viewer__main video { width: 100%; height: 100%; object-fit: contain; background: #000; }
+.viewer__main iframe { width: 100%; height: 100%; border: 0; background: #000; }
 .viewer__main.is-video { cursor: default; }
 .viewer__main.is-video .viewer__caption { display: none; } /* keeps it off the video controls */
-.thumb video { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.thumb--video img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 .thumb--video::before {
     content: "▶";
     position: absolute;
@@ -549,12 +549,12 @@ img.zoom { scale: 120%; }
             <div class="viewer anim-left">
                 <div class="viewer__main">
                     <img class="zoom" src="image/bipolarbear_fire_idle.gif" alt="Bipolar Bear - Fire">
-                    <video hidden controls muted loop playsinline preload="metadata"></video>
-                    <span class="tag">MP4</span>
+                    <iframe hidden title="Gameplay video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" frameborder="0"></iframe>
+                    <span class="tag">VIDEO</span>
                     <span class="viewer__caption"><strong>Bipolar Bear - Fire</strong><span>ospace - gameplay</span></span>
                 </div>
                 <div class="viewer__thumbs"><div class="viewer__scroll">
-                    <button type="button" class="thumb thumb--video is-active" aria-pressed="true" data-type="video" data-src="image/ospace_bpb_f_gameplay.mp4" data-title="Bipolar Bear - Fire" data-sub="ospace - gameplay" data-tag="MP4"><video src="image/ospace_bpb_gameplay.mp4#t=0.1" muted playsinline preload="metadata"></video><span class="tag">MP4</span></button>
+                    <button type="button" class="thumb thumb--video is-active" aria-pressed="true" data-type="video" data-src="https://www.youtube.com/embed/XpMjD6borCo" data-url="https://youtu.be/XpMjD6borCo" data-title="Bipolar Bear - Fire" data-sub="ospace - gameplay" data-tag="VIDEO"><img loading="lazy" decoding="async" src="https://img.youtube.com/vi/XpMjD6borCo/hqdefault.jpg" alt="Bipolar Bear - Fire gameplay"><span class="tag">VIDEO</span></button>
                     <button type="button" class="thumb" aria-pressed="false" data-title="Bipolar Bear - Fire" data-sub="animation - idle" data-tag="A1"><img class="zoom" loading="lazy" decoding="async" src="image/bipolarbear_fire_idle.gif" alt="Bipolar Bear - Fire" data-ph="A1"><span class="tag">A1</span></button>
                     <button type="button" class="thumb" aria-pressed="false" data-title="Bipolar Bear - Fire" data-sub="animation - spawn" data-tag="A2"><img class="zoom" loading="lazy" decoding="async" src="image/bipolarbear_fire_spawn.gif" alt="Bipolar Bear - Fire" data-ph="A2"><span class="tag">A2</span></button>
                     <button type="button" class="thumb" aria-pressed="false" data-title="Bipolar Bear - Fire" data-sub="animation - run" data-tag="A3"><img class="zoom" loading="lazy" decoding="async" src="image/bipolarbear_fire_run.gif" alt="Bipolar Bear - Fire" data-ph="A3"><span class="tag">A3</span></button>
@@ -574,12 +574,12 @@ img.zoom { scale: 120%; }
             <div class="viewer anim-left">
                 <div class="viewer__main">
                     <img class="zoom" src="image/bipolarbear_ice_idle.gif" alt="Bipolar Bear - Ice">
-                    <video hidden controls muted loop playsinline preload="metadata"></video>
-                    <span class="tag">MP4</span>
+                    <iframe hidden title="Gameplay video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" frameborder="0"></iframe>
+                    <span class="tag">VIDEO</span>
                     <span class="viewer__caption"><strong>Bipolar Bear - Ice</strong><span>ospace - gameplay</span></span>
                 </div>
                 <div class="viewer__thumbs"><div class="viewer__scroll">
-                    <button type="button" class="thumb thumb--video is-active" aria-pressed="true" data-type="video" data-src="image/ospace_bpb_gameplay.mp4" data-title="Bipolar Bear - Ice" data-sub="ospace - gameplay" data-tag="MP4"><video src="image/ospace_bpb_gameplay.mp4#t=0.1" muted playsinline preload="metadata"></video><span class="tag">MP4</span></button>
+                    <button type="button" class="thumb thumb--video is-active" aria-pressed="true" data-type="video" data-src="https://www.youtube.com/embed/PeHzZPbnA_U" data-url="https://youtu.be/PeHzZPbnA_U" data-title="Bipolar Bear - Ice" data-sub="ospace - gameplay" data-tag="VIDEO"><img loading="lazy" decoding="async" src="https://img.youtube.com/vi/PeHzZPbnA_U/hqdefault.jpg" alt="Bipolar Bear - Ice gameplay"><span class="tag">VIDEO</span></button>
                     <button type="button" class="thumb" aria-pressed="false" data-title="Bipolar Bear - Ice" data-sub="animation - idle" data-tag="A1"><img class="zoom" loading="lazy" decoding="async" src="image/bipolarbear_ice_idle.gif" alt="Bipolar Bear - Ice" data-ph="A1"><span class="tag">A1</span></button>
                     <button type="button" class="thumb" aria-pressed="false" data-title="Bipolar Bear - Ice" data-sub="animation - spawn" data-tag="A2"><img class="zoom" loading="lazy" decoding="async" src="image/bipolarbear_ice_spawn.gif" alt="Bipolar Bear - Ice" data-ph="A2"><span class="tag">A2</span></button>
                     <button type="button" class="thumb" aria-pressed="false" data-title="Bipolar Bear - Ice" data-sub="animation - run" data-tag="A3"><img class="zoom" loading="lazy" decoding="async" src="image/bipolarbear_ice_run.gif" alt="Bipolar Bear - Ice" data-ph="A3"><span class="tag">A3</span></button>
@@ -680,7 +680,7 @@ img.zoom { scale: 120%; }
     document.querySelectorAll('.viewer').forEach(function (viewer) {
         var vMain  = viewer.querySelector('.viewer__main');
         var vImg   = vMain.querySelector('img');
-        var vVideo = vMain.querySelector('video');
+        var vVideo = vMain.querySelector('iframe');
         var vTag   = vMain.querySelector('.tag');
         var vTitle = vMain.querySelector('.viewer__caption strong');
         var vSub   = vMain.querySelector('.viewer__caption span');
@@ -693,17 +693,29 @@ img.zoom { scale: 120%; }
                 x.setAttribute('aria-pressed', x === t ? 'true' : 'false');
             });
 
-            if (vVideo) vVideo.pause();
+            if (vVideo) vVideo.removeAttribute('src'); // stops any playing YouTube video
 
-            if (isVideo && vVideo) {
+            var isFile = location.protocol === 'file:';
+            vMain.dataset.link = '';
+
+            if (isVideo && isFile) {
+                // YouTube blocks embeds on file:// (Error 153) -> show thumbnail, click opens YouTube
+                if (vVideo) vVideo.hidden = true;
+                vMain.classList.remove('is-video');
+                vImg.hidden = false;
+                vImg.src = t.querySelector('img').src.replace('hqdefault', 'maxresdefault');
+                vImg.onerror = function () { vImg.onerror = null; vImg.src = t.querySelector('img').src; };
+                vImg.alt = t.dataset.title;
+                vImg.classList.remove('zoom');
+                vMain.dataset.link = t.dataset.url;
+            } else if (isVideo && vVideo) {
                 vImg.hidden = true;
                 vVideo.hidden = false;
-                vVideo.src = t.dataset.src;
+                vVideo.src = t.dataset.src + '?autoplay=1&mute=1&loop=0&rel=0&playsinline=1';
                 vMain.classList.add('is-video');
-                vVideo.play().catch(function () {}); // ignore autoplay blocking; controls still work
             } else {
                 var img = t.querySelector('img');
-                if (vVideo) { vVideo.hidden = true; vVideo.removeAttribute('src'); vVideo.load(); }
+                if (vVideo) { vVideo.hidden = true; vVideo.removeAttribute('src'); }
                 vMain.classList.remove('is-video');
                 vImg.hidden = false;
                 vImg.src = img.getAttribute('src');
@@ -719,11 +731,12 @@ img.zoom { scale: 120%; }
         thumbs.forEach(function (t) { t.addEventListener('click', function () { select(t); }); });
 
         vMain.addEventListener('click', function () {
+            if (vMain.dataset.link) { window.open(vMain.dataset.link, '_blank', 'noopener'); return; }
             if (vMain.classList.contains('is-video')) return; // video uses its own controls/fullscreen
             openModal(vTitle.textContent, vImg.getAttribute('src'));
         });
 
-        // Show whichever thumb starts active (so the mp4 loads first in the Bear sections)
+        // Show whichever thumb starts active (so the video loads first in the Bear sections)
         var first = viewer.querySelector('.thumb.is-active');
         if (first) select(first);
     });
