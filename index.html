@@ -282,6 +282,22 @@ img.zoom { scale: 120%; }
 .viewer__main [hidden] { display: none; }
 .viewer__main iframe { width: 100%; height: 100%; border: 0; background: #000; }
 .viewer__main.is-video { cursor: default; }
+.viewer__main.is-poster { cursor: pointer; }
+.viewer__main.is-poster img { object-fit: cover; }
+.viewer__main.is-poster::after {
+    content: "▶";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4.5rem; height: 3.2rem;
+    display: grid; place-items: center;
+    font-size: 1.5rem; color: #fff;
+    background: rgba(255, 0, 0, .88);
+    border-radius: 1rem;
+    box-shadow: 0 4px 18px rgba(0,0,0,.5);
+    pointer-events: none;
+    z-index: 2;
+}
 .viewer__main.is-video .viewer__caption { display: none; } /* keeps it off the video controls */
 .thumb--video img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 .thumb--video::before {
@@ -697,22 +713,22 @@ img.zoom { scale: 120%; }
 
             var isFile = location.protocol === 'file:';
             vMain.dataset.link = '';
+            vMain.dataset.embed = '';
+            vMain.classList.remove('is-poster');
 
-            if (isVideo && isFile) {
-                // YouTube blocks embeds on file:// (Error 153) -> show thumbnail, click opens YouTube
-                if (vVideo) vVideo.hidden = true;
+            if (isVideo && vVideo) {
+                // Show YouTube thumbnail with a play button; click plays it inside the page
+                vVideo.hidden = true;
                 vMain.classList.remove('is-video');
+                vMain.classList.add('is-poster');
                 vImg.hidden = false;
-                vImg.src = t.querySelector('img').src.replace('hqdefault', 'maxresdefault');
-                vImg.onerror = function () { vImg.onerror = null; vImg.src = t.querySelector('img').src; };
+                var thumbSrc = t.querySelector('img').src;
+                vImg.src = thumbSrc.replace('hqdefault', 'maxresdefault');
+                vImg.onerror = function () { vImg.onerror = null; vImg.src = thumbSrc; };
                 vImg.alt = t.dataset.title;
                 vImg.classList.remove('zoom');
-                vMain.dataset.link = t.dataset.url;
-            } else if (isVideo && vVideo) {
-                vImg.hidden = true;
-                vVideo.hidden = false;
-                vVideo.src = t.dataset.src + '?autoplay=1&mute=1&loop=0&rel=0&playsinline=1';
-                vMain.classList.add('is-video');
+                if (isFile) vMain.dataset.link = t.dataset.url;   // file:// blocks embeds -> open YouTube
+                else vMain.dataset.embed = t.dataset.src;
             } else {
                 var img = t.querySelector('img');
                 if (vVideo) { vVideo.hidden = true; vVideo.removeAttribute('src'); }
@@ -731,6 +747,15 @@ img.zoom { scale: 120%; }
         thumbs.forEach(function (t) { t.addEventListener('click', function () { select(t); }); });
 
         vMain.addEventListener('click', function () {
+            if (vMain.dataset.embed) {
+                vVideo.src = vMain.dataset.embed + '?autoplay=1&rel=0&playsinline=1';
+                vVideo.hidden = false;
+                vImg.hidden = true;
+                vMain.classList.remove('is-poster');
+                vMain.classList.add('is-video');
+                vMain.dataset.embed = '';
+                return;
+            }
             if (vMain.dataset.link) { window.open(vMain.dataset.link, '_blank', 'noopener'); return; }
             if (vMain.classList.contains('is-video')) return; // video uses its own controls/fullscreen
             openModal(vTitle.textContent, vImg.getAttribute('src'));
